@@ -3,3 +3,5 @@
 // that can be found in the LICENSE file.
 
 module openpitrix.io/metadata
+
+require github.com/golang/protobuf v1.2.0 // indirect
