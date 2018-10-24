@@ -19,7 +19,6 @@ import (
 	"openpitrix.io/libconfd"
 	"openpitrix.io/logger"
 	"openpitrix.io/metadata/pkg/drone/yunify_confdfunc"
-	"openpitrix.io/metadata/pkg/internal/constants"
 	"openpitrix.io/metadata/pkg/internal/funcutil"
 	"openpitrix.io/metadata/pkg/pb/drone"
 	"openpitrix.io/metadata/pkg/pb/types"
@@ -233,7 +232,7 @@ func (p *Server) StartConfd(ctx context.Context, arg *pbtypes.Empty) (*pbtypes.E
 						logger.Warnf(nil, "%+v", err)
 						p.fg.ReportSubTaskStatus(&pbtypes.SubTaskStatus{
 							TaskId: status.SubtaskId,
-							Status: constants.StatusFailed,
+							Status: pbtypes.TaskStatus_failed.String(),
 						})
 					} else {
 						p.fg.ReportSubTaskStatus(&pbtypes.SubTaskStatus{
@@ -259,7 +258,7 @@ func (p *Server) StartConfd(ctx context.Context, arg *pbtypes.Empty) (*pbtypes.E
 						logger.Warnf(nil, "%+v", err)
 						p.fg.ReportSubTaskStatus(&pbtypes.SubTaskStatus{
 							TaskId: status.SubtaskId,
-							Status: constants.StatusFailed,
+							Status: pbtypes.TaskStatus_failed.String(),
 						})
 					} else {
 						p.fg.ReportSubTaskStatus(&pbtypes.SubTaskStatus{

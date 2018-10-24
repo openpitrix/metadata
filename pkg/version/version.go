@@ -7,7 +7,10 @@
 
 package version
 
-import "fmt"
+import (
+	"fmt"
+	"io"
+)
 
 var (
 	ShortVersion   = "dev"
@@ -15,10 +18,16 @@ var (
 	BuildDate      = "2017-01-01"
 )
 
-func PrintVersionInfo(printer func(string, ...interface{})) {
-	printer("Release OpVersion: %s", ShortVersion)
-	printer("Git Commit Hash: %s", GitSha1Version)
-	printer("Build Time: %s", BuildDate)
+func PrintVersionInfo() {
+	fmt.Printf("Release OpVersion: %s\n", ShortVersion)
+	fmt.Printf("Git Commit Hash: %s\n", GitSha1Version)
+	fmt.Printf("Build Time: %s\n", BuildDate)
+}
+
+func FprintVersionInfo(w io.Writer) {
+	fmt.Fprintf(w, "Release OpVersion: %s\n", ShortVersion)
+	fmt.Fprintf(w, "Git Commit Hash: %s\n", GitSha1Version)
+	fmt.Fprintf(w, "Build Time: %s\n", BuildDate)
 }
 
 func GetVersionString() string {

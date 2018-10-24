@@ -2,14 +2,14 @@
 // Use of this source code is governed by a Apache license
 // that can be found in the LICENSE file.
 
-package main
+package pathutil
 
 import (
 	"os"
 	"path/filepath"
 )
 
-func pathutil_MakeAbsPath(path string) string {
+func MakeAbsPath(path string) string {
 	if filepath.IsAbs(path) {
 		return path
 	}
