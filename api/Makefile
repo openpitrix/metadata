@@ -15,12 +15,17 @@ generate: Makefile
 	@mkdir -p ../pkg/pb
 	@rm -rf ../pkg/pb/*
 
+	# grpc service
 	protoc $(PROTOC_FLAGS) --go_out=$(GOPATH)/src ${METADATA_TYPES_PBFILES}
-	go run $(PWD)/../build/replace -old=,omitempty -new= -dir=$(GOPATH)/src/openpitrix.io/metadata/pkg/pb/types
-
 	protoc $(PROTOC_FLAGS) --go_out=plugins=grpc:$(GOPATH)/src ${METADATA_DRONE_PBFILES}
-	protoc $(PROTOC_FLAGS) --openpitrix-metadata-frontgate_out=$(GOPATH)/src ${METADATA_FRONTGATE_PBFILES}
 	protoc $(PROTOC_FLAGS) --go_out=plugins=grpc:$(GOPATH)/src ${METADATA_PILOT_PBFILES}
+
+	# custom rpc service
+	protoc $(PROTOC_FLAGS) --openpitrix-metadata-frontgate_out=$(GOPATH)/src ${METADATA_FRONTGATE_PBFILES}
+
+	# fix gen code
+	go run $(PWD)/../build/replace -old=,omitempty -new= -dir=$(GOPATH)/src/openpitrix.io/metadata/pkg/pb/types
+	go run $(PWD)/../build/replace -old=\"in_use\" -new=\"in-use\" -dir=$(GOPATH)/src/openpitrix.io/metadata/pkg/pb/types
 
 clean:
 	rm -rf $(GOPATH)/src/openpitrix.io/metadata/pkg/pb

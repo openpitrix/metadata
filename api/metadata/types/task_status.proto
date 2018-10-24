@@ -1,0 +1,46 @@
+// Copyright 2018 The OpenPitrix Authors. All rights reserved.
+// Use of this source code is governed by a Apache license
+// that can be found in the LICENSE file.
+
+syntax = "proto3";
+
+package metadata.types;
+
+option go_package = "openpitrix.io/metadata/pkg/pb/types;pbtypes";
+
+enum TaskStatus {
+	active      = 0;
+	enabled     = 1;
+	disabled    = 2;
+	creating    = 3;
+	deleted     = 4;
+	deleting    = 5;
+	upgrading   = 6;
+	updating    = 7;
+	rollbacking = 8;
+
+	stopped     = 9;
+	stopping    = 10;
+	starting    = 11;
+	recovering  = 12;
+	ceased      = 13;
+	ceasing     = 14;
+	resizing    = 15;
+	scaling     = 16;
+	working     = 17;
+	pending     = 18;
+	successful  = 19;
+	failed      = 20;
+
+	running    = 21;
+	terminated = 22;
+
+	available = 23;
+	in_use    = 24; // in-use
+
+	draft     = 25;
+	submitted = 26;
+	passed    = 27;
+	rejected  = 28;
+	suspended = 29;
+}
