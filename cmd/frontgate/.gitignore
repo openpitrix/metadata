@@ -1,0 +1,10 @@
+# tls config
+*.key
+*.crt
+*.csr
+*.srl
+
+*.out.log
+*.out
+
+default.etcd
