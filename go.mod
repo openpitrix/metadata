@@ -5,6 +5,7 @@
 module openpitrix.io/metadata
 
 require (
+	github.com/asaskevich/govalidator v0.0.0-20180720115003-f9ffefc3facf
 	github.com/golang/protobuf v1.2.0
 	github.com/pkg/errors v0.8.0
 	github.com/urfave/cli v1.20.0
