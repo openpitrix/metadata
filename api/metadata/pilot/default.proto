@@ -13,4 +13,6 @@ message Default {
 	optional string PilotServiceHost = 2 [
 		default = "openpitrix-pilot-service"
 	];
+
+	optional int32 PilotTlsListenPort = 3 [default = 9114];
 }
