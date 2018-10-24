@@ -2,8 +2,13 @@
 // Use of this source code is governed by a Apache license
 // that can be found in the LICENSE file.
 
+// openpitrix pilot service
 package main
 
+import (
+	"openpitrix.io/metadata/pkg/cmd/pilot"
+)
+
 func main() {
-	println("TODO")
+	pilot.Main()
 }
