@@ -6,9 +6,7 @@
 package drone
 
 import (
-	"bytes"
 	"context"
-	"encoding/json"
 	"fmt"
 	"os"
 	"regexp"
@@ -19,6 +17,7 @@ import (
 	"openpitrix.io/logger"
 	"openpitrix.io/metadata/pkg/drone"
 	"openpitrix.io/metadata/pkg/drone/droneutil"
+	"openpitrix.io/metadata/pkg/internal/jsonutil"
 	"openpitrix.io/metadata/pkg/internal/pathutil"
 	"openpitrix.io/metadata/pkg/pb/drone"
 	"openpitrix.io/metadata/pkg/pb/frontgate"
@@ -103,7 +102,7 @@ EXAMPLE:
 					os.Exit(1)
 				}
 
-				fmt.Println(JSONString(info))
+				fmt.Println(jsonutil.JSONString(info))
 				return
 			},
 		},
@@ -421,15 +420,6 @@ EXAMPLE:
 	}
 
 	app.Run(os.Args)
-}
-
-func JSONString(m interface{}) string {
-	data, err := json.MarshalIndent(m, "", "\t")
-	if err != nil {
-		return ""
-	}
-	data = bytes.Replace(data, []byte("\n"), []byte("\r\n"), -1)
-	return string(data)
 }
 
 const tourTopic = `
