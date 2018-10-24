@@ -7,7 +7,8 @@ package drone
 import (
 	"google.golang.org/grpc"
 
-	"openpitrix.io/openpitrix/pkg/manager"
+	"openpitrix.io/metadata/pkg/internal/manager"
+	"openpitrix.io/metadata/pkg/pb/drone"
 )
 
 type Server struct {
@@ -30,7 +31,6 @@ func Serve(cfg *ConfigManager, confd *ConfdServer) {
 	s := NewServer(cfg, confd)
 
 	manager.NewGrpcServer("drone-service", int(s.cfg.Get().ListenPort)).Serve(func(server *grpc.Server) {
-		//pbdrone.RegisterDroneServiceServer(server, s)
-		_ = s
+		pbdrone.RegisterDroneServiceServer(server, s)
 	})
 }

@@ -2,8 +2,6 @@
 // Use of this source code is governed by a Apache license
 // that can be found in the LICENSE file.
 
-// +build ignore
-
 package drone
 
 import (
@@ -18,14 +16,14 @@ import (
 	"strings"
 	"time"
 
-	"openpitrix.io/openpitrix/pkg/constants"
-	"openpitrix.io/openpitrix/pkg/libconfd"
-	"openpitrix.io/openpitrix/pkg/logger"
-	"openpitrix.io/openpitrix/pkg/pb/metadata/drone"
-	"openpitrix.io/openpitrix/pkg/pb/metadata/types"
-	"openpitrix.io/openpitrix/pkg/service/metadata/drone/yunify_confdfunc"
-	"openpitrix.io/openpitrix/pkg/util/funcutil"
-	"openpitrix.io/openpitrix/pkg/version"
+	"openpitrix.io/libconfd"
+	"openpitrix.io/logger"
+	"openpitrix.io/metadata/pkg/drone/yunify_confdfunc"
+	"openpitrix.io/metadata/pkg/internal/constants"
+	"openpitrix.io/metadata/pkg/internal/funcutil"
+	"openpitrix.io/metadata/pkg/pb/drone"
+	"openpitrix.io/metadata/pkg/pb/types"
+	"openpitrix.io/metadata/pkg/version"
 )
 
 var (
@@ -60,7 +58,7 @@ func (p *Server) DistributeDrone(ctx context.Context, in *pbtypes.DroneBinary) (
 
 	filePath := fmt.Sprintf(DowloadFilePathPattern, pilotVersion, "drone")
 
-	logger.Info(nil, "Write drone to [%s]", filePath)
+	logger.Infof(nil, "Write drone to [%s]", filePath)
 	f, err := os.Create(filePath)
 	if err != nil {
 		return &pbtypes.Empty{}, err
@@ -88,12 +86,12 @@ func (p *Server) DistributeDrone(ctx context.Context, in *pbtypes.DroneBinary) (
 
 func (p *Server) GetPilotVersion(context.Context, *pbtypes.Empty) (*pbtypes.Version, error) {
 	err := fmt.Errorf("TODO")
-	logger.Warn(nil, "%+v", err)
+	logger.Warnf(nil, "%+v", err)
 	return nil, err
 }
 func (p *Server) GetFrontgateVersion(context.Context, *pbtypes.Empty) (*pbtypes.Version, error) {
 	err := fmt.Errorf("TODO")
-	logger.Warn(nil, "%+v", err)
+	logger.Warnf(nil, "%+v", err)
 	return nil, err
 }
 func (p *Server) GetDroneVersion(context.Context, *pbtypes.DroneEndpoint) (*pbtypes.Version, error) {
@@ -107,29 +105,29 @@ func (p *Server) GetDroneVersion(context.Context, *pbtypes.DroneEndpoint) (*pbty
 
 func (p *Server) PingMetadataBackend(context.Context, *pbtypes.FrontgateEndpoint) (*pbtypes.Empty, error) {
 	err := fmt.Errorf("TODO")
-	logger.Warn(nil, "%+v", err)
+	logger.Warnf(nil, "%+v", err)
 	return nil, err
 }
 
 func (p *Server) GetDroneConfig(context.Context, *pbtypes.Empty) (*pbtypes.DroneConfig, error) {
-	logger.Info(nil, funcutil.CallerName(1))
+	logger.Infof(nil, funcutil.CallerName(1))
 
 	return p.cfg.Get(), nil
 }
 func (p *Server) SetDroneConfig(ctx context.Context, cfg *pbtypes.DroneConfig) (*pbtypes.Empty, error) {
-	logger.Info(nil, funcutil.CallerName(1))
+	logger.Infof(nil, funcutil.CallerName(1))
 
 	if reflect.DeepEqual(cfg, p.cfg.Get()) {
 		return &pbtypes.Empty{}, nil
 	}
 
 	if err := p.cfg.Set(cfg); err != nil {
-		logger.Warn(nil, "%+v", err)
+		logger.Warnf(nil, "%+v", err)
 		return &pbtypes.Empty{}, err
 	}
 
 	if err := p.cfg.Save(); err != nil {
-		logger.Warn(nil, "%+v", err)
+		logger.Warnf(nil, "%+v", err)
 		return &pbtypes.Empty{}, err
 	}
 
@@ -137,13 +135,13 @@ func (p *Server) SetDroneConfig(ctx context.Context, cfg *pbtypes.DroneConfig) (
 }
 
 func (p *Server) GetConfdConfig(ctx context.Context, arg *pbtypes.Empty) (*pbtypes.ConfdConfig, error) {
-	logger.Info(nil, funcutil.CallerName(1))
+	logger.Infof(nil, funcutil.CallerName(1))
 
 	return p.confd.GetConfig(), nil
 }
 
 func (p *Server) SetConfdConfig(ctx context.Context, arg *pbtypes.ConfdConfig) (*pbtypes.Empty, error) {
-	logger.Info(nil, funcutil.CallerName(1))
+	logger.Infof(nil, funcutil.CallerName(1))
 
 	cfg := p.cfg.Get()
 	fnHookKeyAdjuster := func(absKey string) (realKey string) {
@@ -157,11 +155,11 @@ func (p *Server) SetConfdConfig(ctx context.Context, arg *pbtypes.ConfdConfig) (
 	}
 
 	if err := p.confd.SetConfig(arg, fnHookKeyAdjuster); err != nil {
-		logger.Warn(nil, "%+v", err)
+		logger.Warnf(nil, "%+v", err)
 		return nil, err
 	}
 	if err := p.confd.Save(); err != nil {
-		logger.Warn(nil, "%+v", err)
+		logger.Warnf(nil, "%+v", err)
 		return nil, err
 	}
 
@@ -169,38 +167,38 @@ func (p *Server) SetConfdConfig(ctx context.Context, arg *pbtypes.ConfdConfig) (
 }
 
 func (p *Server) GetFrontgateConfig(context.Context, *pbtypes.Empty) (*pbtypes.FrontgateConfig, error) {
-	logger.Info(nil, funcutil.CallerName(1))
+	logger.Infof(nil, funcutil.CallerName(1))
 
 	cfg, err := p.fg.GetConfig()
 	if err != nil {
-		logger.Warn(nil, "%+v", err)
+		logger.Warnf(nil, "%+v", err)
 		return nil, err
 	}
 	return cfg, nil
 }
 
 func (p *Server) SetFrontgateConfig(ctx context.Context, cfg *pbtypes.FrontgateConfig) (*pbtypes.Empty, error) {
-	logger.Info(nil, funcutil.CallerName(1))
+	logger.Infof(nil, funcutil.CallerName(1))
 
 	err := p.fg.SetConfig(cfg)
 	if err != nil {
-		logger.Warn(nil, "%+v", err)
+		logger.Warnf(nil, "%+v", err)
 		return nil, err
 	}
 	return &pbtypes.Empty{}, nil
 }
 
 func (p *Server) IsConfdRunning(ctx context.Context, arg *pbtypes.Empty) (*pbtypes.Bool, error) {
-	logger.Info(nil, funcutil.CallerName(1))
+	logger.Infof(nil, funcutil.CallerName(1))
 
 	return &pbtypes.Bool{Value: p.confd.IsRunning()}, nil
 }
 
 func (p *Server) StartConfd(ctx context.Context, arg *pbtypes.Empty) (*pbtypes.Empty, error) {
-	logger.Info(nil, funcutil.CallerName(1))
+	logger.Infof(nil, funcutil.CallerName(1))
 
 	cfg := p.cfg.Get()
-	logger.Info(nil, "StartConfd: %v", cfg)
+	logger.Infof(nil, "StartConfd: %v", cfg)
 
 	err := p.confd.Start(func(opt *libconfd.Config) {
 		opt.FuncMap = yunify_confdfunc.MakeCustomFuncMap()
@@ -220,19 +218,19 @@ func (p *Server) StartConfd(ctx context.Context, arg *pbtypes.Empty) (*pbtypes.E
 		}
 		opt.HookOnCheckCmdDone = func(trName, cmd string, err error) {
 			if err != nil {
-				logger.Warn(nil, "%+v", err)
+				logger.Warnf(nil, "%+v", err)
 				return
 			}
 			if trName == "/etc/confd/conf.d/cmd.info.toml" {
 				go func() {
-					logger.Info(nil, "LoadLastCmdStatus: %v", cfg.CmdInfoLogPath)
+					logger.Infof(nil, "LoadLastCmdStatus: %v", cfg.CmdInfoLogPath)
 
 					status, isEmpty, err := LoadLastCmdStatus(cfg.CmdInfoLogPath)
 					if isEmpty {
 						return
 					}
 					if err != nil {
-						logger.Warn(nil, "%+v", err)
+						logger.Warnf(nil, "%+v", err)
 						p.fg.ReportSubTaskStatus(&pbtypes.SubTaskStatus{
 							TaskId: status.SubtaskId,
 							Status: constants.StatusFailed,
@@ -248,7 +246,7 @@ func (p *Server) StartConfd(ctx context.Context, arg *pbtypes.Empty) (*pbtypes.E
 		}
 		opt.HookOnReloadCmdDone = func(trName, cmd string, err error) {
 			if err != nil {
-				logger.Warn(nil, "%+v", err)
+				logger.Warnf(nil, "%+v", err)
 				return
 			}
 			if trName == "/etc/confd/conf.d/cmd.info.toml" {
@@ -258,7 +256,7 @@ func (p *Server) StartConfd(ctx context.Context, arg *pbtypes.Empty) (*pbtypes.E
 						return
 					}
 					if err != nil {
-						logger.Warn(nil, "%+v", err)
+						logger.Warnf(nil, "%+v", err)
 						p.fg.ReportSubTaskStatus(&pbtypes.SubTaskStatus{
 							TaskId: status.SubtaskId,
 							Status: constants.StatusFailed,
@@ -274,14 +272,14 @@ func (p *Server) StartConfd(ctx context.Context, arg *pbtypes.Empty) (*pbtypes.E
 		}
 		opt.HookOnUpdateDone = func(trName string, err error) {
 			if err != nil {
-				logger.Warn(nil, "%+v", err)
+				logger.Warnf(nil, "%+v", err)
 				return
 			}
 		}
 	})
 
 	if err != nil {
-		logger.Warn(nil, "%+v", err)
+		logger.Warnf(nil, "%+v", err)
 		return nil, err
 	}
 
@@ -289,10 +287,10 @@ func (p *Server) StartConfd(ctx context.Context, arg *pbtypes.Empty) (*pbtypes.E
 }
 
 func (p *Server) StopConfd(ctx context.Context, arg *pbtypes.Empty) (*pbtypes.Empty, error) {
-	logger.Info(nil, funcutil.CallerName(1))
+	logger.Infof(nil, funcutil.CallerName(1))
 
 	if err := p.confd.Stop(); err != nil {
-		logger.Error(nil, "StopConfd: %v", err)
+		logger.Errorf(nil, "StopConfd: %v", err)
 		return nil, err
 	}
 
@@ -300,11 +298,11 @@ func (p *Server) StopConfd(ctx context.Context, arg *pbtypes.Empty) (*pbtypes.Em
 }
 
 func (p *Server) GetTemplateFiles(ctx context.Context, arg *pbtypes.Empty) (*pbtypes.StringList, error) {
-	logger.Info(nil, funcutil.CallerName(1))
+	logger.Infof(nil, funcutil.CallerName(1))
 
 	if !p.confd.IsRunning() {
 		err := fmt.Errorf("drone: confd is not started")
-		logger.Warn(nil, "%+v", err)
+		logger.Warnf(nil, "%+v", err)
 		return nil, err
 	}
 
@@ -312,13 +310,13 @@ func (p *Server) GetTemplateFiles(ctx context.Context, arg *pbtypes.Empty) (*pbt
 	confdir := cfg.GetProcessorConfig().GetConfdir()
 	if confdir == "" {
 		err := fmt.Errorf("drone: invaid confdir: %q", confdir)
-		logger.Warn(nil, "%+v", err)
+		logger.Warnf(nil, "%+v", err)
 		return nil, err
 	}
 
 	_, paths, err := libconfd.ListTemplateResource(filepath.Join(confdir, "conf.d"))
 	if err != nil {
-		logger.Warn(nil, "%+v", err)
+		logger.Warnf(nil, "%+v", err)
 		return nil, err
 	}
 
@@ -331,11 +329,11 @@ func (p *Server) GetTemplateFiles(ctx context.Context, arg *pbtypes.Empty) (*pbt
 }
 
 func (p *Server) GetValues(ctx context.Context, arg *pbtypes.StringList) (*pbtypes.StringMap, error) {
-	logger.Info(nil, funcutil.CallerName(1))
+	logger.Infof(nil, funcutil.CallerName(1))
 
 	if !p.confd.IsRunning() {
 		err := fmt.Errorf("drone: confd is not started")
-		logger.Warn(nil, "%+v", err)
+		logger.Warnf(nil, "%+v", err)
 		return nil, err
 	}
 
@@ -347,7 +345,7 @@ func (p *Server) GetValues(ctx context.Context, arg *pbtypes.StringList) (*pbtyp
 	keys := arg.GetValueList()
 	m, err := client.GetValues(keys)
 	if err != nil {
-		logger.Warn(nil, "%+v", err)
+		logger.Warnf(nil, "%+v", err)
 		return nil, err
 	}
 
@@ -363,17 +361,17 @@ func (p *Server) GetValues(ctx context.Context, arg *pbtypes.StringList) (*pbtyp
 }
 
 func (p *Server) PingPilot(ctx context.Context, arg *pbtypes.FrontgateEndpoint) (*pbtypes.Empty, error) {
-	logger.Info(nil, funcutil.CallerName(1))
+	logger.Infof(nil, funcutil.CallerName(1))
 
 	c, err := p.fg.getClient()
 	if err != nil {
-		logger.Warn(nil, "%+v", err)
+		logger.Warnf(nil, "%+v", err)
 		return nil, err
 	}
 
 	_, err = c.PingPilot(&pbtypes.Empty{})
 	if err != nil {
-		logger.Warn(nil, "%+v", err)
+		logger.Warnf(nil, "%+v", err)
 		return nil, err
 	}
 
@@ -381,17 +379,17 @@ func (p *Server) PingPilot(ctx context.Context, arg *pbtypes.FrontgateEndpoint) 
 }
 
 func (p *Server) PingFrontgate(ctx context.Context, arg *pbtypes.FrontgateEndpoint) (*pbtypes.Empty, error) {
-	logger.Info(nil, funcutil.CallerName(1))
+	logger.Infof(nil, funcutil.CallerName(1))
 
 	c, err := p.fg.getClient()
 	if err != nil {
-		logger.Warn(nil, "%+v", err)
+		logger.Warnf(nil, "%+v", err)
 		return nil, err
 	}
 
 	_, err = c.PingFrontgate(&pbtypes.Empty{})
 	if err != nil {
-		logger.Warn(nil, "%+v", err)
+		logger.Warnf(nil, "%+v", err)
 		return nil, err
 	}
 
@@ -399,12 +397,12 @@ func (p *Server) PingFrontgate(ctx context.Context, arg *pbtypes.FrontgateEndpoi
 }
 
 func (p *Server) PingDrone(ctx context.Context, arg *pbtypes.Empty) (*pbtypes.Empty, error) {
-	logger.Info(nil, funcutil.CallerName(1))
+	logger.Infof(nil, funcutil.CallerName(1))
 	return &pbtypes.Empty{}, nil
 }
 
 func (p *Server) RunCommand(ctx context.Context, arg *pbtypes.RunCommandOnDroneRequest) (*pbtypes.String, error) {
-	logger.Info(nil, funcutil.CallerName(1))
+	logger.Infof(nil, funcutil.CallerName(1))
 
 	var c *exec.Cmd
 	if runtime.GOOS == "windows" {
@@ -418,7 +416,7 @@ func (p *Server) RunCommand(ctx context.Context, arg *pbtypes.RunCommandOnDroneR
 	c.Stderr = &b
 
 	if err := c.Start(); err != nil {
-		logger.Warn(nil, "%+v", err)
+		logger.Warnf(nil, "%+v", err)
 		return nil, err
 	}
 
@@ -435,7 +433,7 @@ func (p *Server) RunCommand(ctx context.Context, arg *pbtypes.RunCommandOnDroneR
 	timer.Stop()
 
 	if err != nil {
-		logger.Warn(nil, "%+v", err)
+		logger.Warnf(nil, "%+v", err)
 		return nil, err
 	}
 

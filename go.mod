@@ -8,11 +8,14 @@ require (
 	github.com/asaskevich/govalidator v0.0.0-20180720115003-f9ffefc3facf // indirect
 	github.com/bitly/go-simplejson v0.5.0 // indirect
 	github.com/fatih/camelcase v1.0.0 // indirect
-	github.com/fatih/structs v1.1.0 // indirect
+	github.com/fatih/structs v1.1.0
 	github.com/go-sql-driver/mysql v1.4.0 // indirect
-	github.com/gocraft/dbr v0.0.0-20181019144303-28507f94262f // indirect
+	github.com/gocraft/dbr v0.0.0-20181019144303-28507f94262f
 	github.com/golang/protobuf v1.2.0
+	github.com/grpc-ecosystem/go-grpc-middleware v1.0.0
 	github.com/koding/multiconfig v0.0.0-20171124222453-69c27309b2d7 // indirect
+	github.com/opentracing/opentracing-go v1.0.2 // indirect
+	github.com/pkg/errors v0.8.0
 	golang.org/x/net v0.0.0-20181017193950-04a2e542c03f
 	google.golang.org/grpc v1.15.0
 	gopkg.in/square/go-jose.v2 v2.1.9 // indirect
