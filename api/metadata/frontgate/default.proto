@@ -9,5 +9,5 @@ package metadata.frontgate;
 option go_package = "openpitrix.io/metadata/pkg/pb/frontgate;pbfrontgate";
 
 message Default {
-	optional int32 FrontgateService = 1 [default = 9111];
+	optional int32 FrontgateServicePort = 1 [default = 9111];
 }

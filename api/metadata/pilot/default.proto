@@ -9,7 +9,7 @@ package metadata.pilot;
 option go_package = "openpitrix.io/metadata/pkg/pb/pilot;pbpilot";
 
 message Default {
-	optional int32 PilotService = 1 [default = 9110];
+	optional int32 PilotServicePort = 1 [default = 9110];
 	optional string PilotServiceHost = 2 [
 		default = "openpitrix-pilot-service"
 	];

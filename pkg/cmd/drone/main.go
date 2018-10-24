@@ -164,7 +164,7 @@ EXAMPLE:
 				},
 				cli.IntFlag{
 					Name:  "frontgate-port",
-					Value: int(pbfrontgate.Default_Default_FrontgateService),
+					Value: int(pbfrontgate.Default_Default_FrontgateServicePort),
 				},
 
 				cli.StringFlag{

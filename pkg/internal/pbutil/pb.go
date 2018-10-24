@@ -67,7 +67,7 @@ func GetLimitFromRequest(req RequestHadLimit) uint64 {
 func FromProtoTimestamp(t *timestamp.Timestamp) (tt time.Time) {
 	tt, err := ptypes.Timestamp(t)
 	if err != nil {
-		logger.Critical(nil, "Cannot convert timestamp [T] to time.Time [%+v]: %+v", t, err)
+		logger.Criticalf(nil, "Cannot convert timestamp [T] to time.Time [%+v]: %+v", t, err)
 		panic(err)
 	}
 	return
