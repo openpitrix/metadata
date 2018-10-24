@@ -16,6 +16,7 @@ require (
 	github.com/koding/multiconfig v0.0.0-20171124222453-69c27309b2d7 // indirect
 	github.com/opentracing/opentracing-go v1.0.2 // indirect
 	github.com/pkg/errors v0.8.0
+	github.com/urfave/cli v1.20.0
 	golang.org/x/net v0.0.0-20181017193950-04a2e542c03f
 	google.golang.org/grpc v1.15.0
 	gopkg.in/square/go-jose.v2 v2.1.9 // indirect
