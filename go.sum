@@ -126,3 +126,5 @@ openpitrix.io/libconfd/metad v0.1.0 h1:EEld0/hSYGg9UgfNGx5a1x862XxtYs8eWzXYl9emo
 openpitrix.io/libconfd/metad v0.1.0/go.mod h1:YH2jKNAKvjweiTytXHquyXMQO7x40GwD5nDxu4zTfJY=
 openpitrix.io/logger v0.1.0 h1:ErXXKZtFEFNjMXgu0VK6jXMTkMl3qKkSNT39ySd0twY=
 openpitrix.io/logger v0.1.0/go.mod h1:SV8Btt2cTSmeL9H/1XCkYmQ+WQ2upVY4e0wlr07RP28=
+rsc.io/goversion v1.2.0 h1:SPn+NLTiAG7w30IRK/DKp1BjvpWabYgxlLp/+kx5J8w=
+rsc.io/goversion v1.2.0/go.mod h1:Eih9y/uIBS3ulggl7KNJ09xGSLcuNaLgmvvqa07sgfo=

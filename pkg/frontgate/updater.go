@@ -24,7 +24,7 @@ import (
 )
 
 var (
-	Version                     = version.ShortVersion
+	Version                     = version.GetVersionString()
 	CheckInterval               = 10 * time.Second
 	RetryInterval               = 3 * time.Second
 	RetryCount                  = 5

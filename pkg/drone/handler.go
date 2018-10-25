@@ -95,9 +95,7 @@ func (p *Server) GetFrontgateVersion(context.Context, *pbtypes.Empty) (*pbtypes.
 }
 func (p *Server) GetDroneVersion(context.Context, *pbtypes.DroneEndpoint) (*pbtypes.Version, error) {
 	reply := &pbtypes.Version{
-		ShortVersion:   version.ShortVersion,
-		GitSha1Version: version.GitSha1Version,
-		BuildDate:      version.BuildDate,
+		ShortVersion: version.GetVersionString(),
 	}
 	return reply, nil
 }

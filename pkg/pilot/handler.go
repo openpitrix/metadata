@@ -26,9 +26,7 @@ var (
 
 func (p *Server) GetPilotVersion(context.Context, *pbtypes.Empty) (*pbtypes.Version, error) {
 	reply := &pbtypes.Version{
-		ShortVersion:   version.ShortVersion,
-		GitSha1Version: version.GitSha1Version,
-		BuildDate:      version.BuildDate,
+		ShortVersion: version.GetVersionString(),
 	}
 	return reply, nil
 }

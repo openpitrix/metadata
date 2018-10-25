@@ -67,9 +67,12 @@ func (g *GrpcServer) WithBuilder(b builderT) *GrpcServer {
 }
 
 func (g *GrpcServer) Serve(callback RegisterCallback, opt ...grpc.ServerOption) {
-	logger.Infof(nil, "Release OpVersion: %s\n", version.ShortVersion)
-	logger.Infof(nil, "Git Commit Hash: %s\n", version.GitSha1Version)
-	logger.Infof(nil, "Build Time: %s\n", version.BuildDate)
+	if ver := version.GetVersion(); ver != nil {
+		logger.Infof(nil, "Release OpVersion: %s\n", ver.AppModVersion)
+		logger.Infof(nil, "GoVersion: %s\n", ver.GoVersion)
+	} else {
+		logger.Infof(nil, "Release OpVersion: unknown\n")
+	}
 
 	logger.Infof(nil, "Service [%s] start listen at port [%d]", g.ServiceName, g.Port)
 	lis, err := net.Listen("tcp", fmt.Sprintf(":%d", g.Port))
