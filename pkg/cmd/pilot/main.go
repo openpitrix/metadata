@@ -129,7 +129,7 @@ EXAMPLE:
 					os.Exit(1)
 				}
 
-				fmt.Println(JSONString(info))
+				fmt.Println(jsonString(info))
 				return
 			},
 		},
@@ -456,7 +456,7 @@ EXAMPLE:
 					logger.Criticalf(nil, "%+v", err)
 					os.Exit(1)
 				}
-				fmt.Println(JSONString(reply))
+				fmt.Println(jsonString(reply))
 				return
 			},
 		},
@@ -685,7 +685,7 @@ EXAMPLE:
 					os.Exit(1)
 				}
 
-				fmt.Println(JSONString(info))
+				fmt.Println(jsonString(info))
 				return
 			},
 		},
@@ -706,7 +706,7 @@ EXAMPLE:
 	app.Run(os.Args)
 }
 
-func JSONString(m interface{}) string {
+func jsonString(m interface{}) string {
 	data, err := json.MarshalIndent(m, "", "\t")
 	if err != nil {
 		return ""
@@ -715,7 +715,7 @@ func JSONString(m interface{}) string {
 	return string(data)
 }
 
-func Atoi(s string, defaultValue int) int {
+func atoi(s string, defaultValue int) int {
 	if v, err := strconv.Atoi(s); err == nil {
 		return v
 	}
