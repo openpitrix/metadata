@@ -9,6 +9,7 @@ require (
 	github.com/chai2010/jsonmap v1.0.0
 	github.com/coreos/etcd v3.3.10+incompatible
 	github.com/golang/protobuf v1.2.0
+	github.com/grpc-ecosystem/go-grpc-middleware v1.0.0
 	github.com/pkg/errors v0.8.0
 	github.com/urfave/cli v1.20.0
 	golang.org/x/net v0.0.0-20181017193950-04a2e542c03f
