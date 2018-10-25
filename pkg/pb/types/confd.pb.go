@@ -31,7 +31,7 @@ func (m *ConfdConfig) Reset()         { *m = ConfdConfig{} }
 func (m *ConfdConfig) String() string { return proto.CompactTextString(m) }
 func (*ConfdConfig) ProtoMessage()    {}
 func (*ConfdConfig) Descriptor() ([]byte, []int) {
-	return fileDescriptor_confd_19b2a730148e8e25, []int{0}
+	return fileDescriptor_confd_b7f9994ab455111d, []int{0}
 }
 func (m *ConfdConfig) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ConfdConfig.Unmarshal(m, b)
@@ -78,7 +78,7 @@ func (m *ConfdEndpoint) Reset()         { *m = ConfdEndpoint{} }
 func (m *ConfdEndpoint) String() string { return proto.CompactTextString(m) }
 func (*ConfdEndpoint) ProtoMessage()    {}
 func (*ConfdEndpoint) Descriptor() ([]byte, []int) {
-	return fileDescriptor_confd_19b2a730148e8e25, []int{1}
+	return fileDescriptor_confd_b7f9994ab455111d, []int{1}
 }
 func (m *ConfdEndpoint) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ConfdEndpoint.Unmarshal(m, b)
@@ -140,7 +140,7 @@ func (m *ConfdProcessorConfig) Reset()         { *m = ConfdProcessorConfig{} }
 func (m *ConfdProcessorConfig) String() string { return proto.CompactTextString(m) }
 func (*ConfdProcessorConfig) ProtoMessage()    {}
 func (*ConfdProcessorConfig) Descriptor() ([]byte, []int) {
-	return fileDescriptor_confd_19b2a730148e8e25, []int{2}
+	return fileDescriptor_confd_b7f9994ab455111d, []int{2}
 }
 func (m *ConfdProcessorConfig) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ConfdProcessorConfig.Unmarshal(m, b)
@@ -242,7 +242,7 @@ func (m *ConfdBackendConfig) Reset()         { *m = ConfdBackendConfig{} }
 func (m *ConfdBackendConfig) String() string { return proto.CompactTextString(m) }
 func (*ConfdBackendConfig) ProtoMessage()    {}
 func (*ConfdBackendConfig) Descriptor() ([]byte, []int) {
-	return fileDescriptor_confd_19b2a730148e8e25, []int{3}
+	return fileDescriptor_confd_b7f9994ab455111d, []int{3}
 }
 func (m *ConfdBackendConfig) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ConfdBackendConfig.Unmarshal(m, b)
@@ -324,7 +324,7 @@ func (m *ConfdStatus) Reset()         { *m = ConfdStatus{} }
 func (m *ConfdStatus) String() string { return proto.CompactTextString(m) }
 func (*ConfdStatus) ProtoMessage()    {}
 func (*ConfdStatus) Descriptor() ([]byte, []int) {
-	return fileDescriptor_confd_19b2a730148e8e25, []int{4}
+	return fileDescriptor_confd_b7f9994ab455111d, []int{4}
 }
 func (m *ConfdStatus) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ConfdStatus.Unmarshal(m, b)
@@ -377,7 +377,7 @@ func (m *SetConfdConfigRequest) Reset()         { *m = SetConfdConfigRequest{} }
 func (m *SetConfdConfigRequest) String() string { return proto.CompactTextString(m) }
 func (*SetConfdConfigRequest) ProtoMessage()    {}
 func (*SetConfdConfigRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_confd_19b2a730148e8e25, []int{5}
+	return fileDescriptor_confd_b7f9994ab455111d, []int{5}
 }
 func (m *SetConfdConfigRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SetConfdConfigRequest.Unmarshal(m, b)
@@ -420,9 +420,9 @@ func init() {
 	proto.RegisterType((*SetConfdConfigRequest)(nil), "metadata.types.SetConfdConfigRequest")
 }
 
-func init() { proto.RegisterFile("metadata/types/confd.proto", fileDescriptor_confd_19b2a730148e8e25) }
+func init() { proto.RegisterFile("metadata/types/confd.proto", fileDescriptor_confd_b7f9994ab455111d) }
 
-var fileDescriptor_confd_19b2a730148e8e25 = []byte{
+var fileDescriptor_confd_b7f9994ab455111d = []byte{
 	// 616 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x6c, 0x54, 0xdf, 0x6a, 0xdb, 0x3e,
 	0x14, 0x26, 0x6d, 0x93, 0xd8, 0x4a, 0xff, 0xfc, 0x10, 0xfd, 0x0d, 0x2f, 0xa5, 0xb4, 0x33, 0x65,

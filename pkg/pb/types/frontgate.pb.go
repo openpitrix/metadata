@@ -30,7 +30,7 @@ func (m *FrontgateId) Reset()         { *m = FrontgateId{} }
 func (m *FrontgateId) String() string { return proto.CompactTextString(m) }
 func (*FrontgateId) ProtoMessage()    {}
 func (*FrontgateId) Descriptor() ([]byte, []int) {
-	return fileDescriptor_frontgate_c1e8993c386293d6, []int{0}
+	return fileDescriptor_frontgate_093f87540eca0b29, []int{0}
 }
 func (m *FrontgateId) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_FrontgateId.Unmarshal(m, b)
@@ -77,7 +77,7 @@ func (m *FrontgateNodeId) Reset()         { *m = FrontgateNodeId{} }
 func (m *FrontgateNodeId) String() string { return proto.CompactTextString(m) }
 func (*FrontgateNodeId) ProtoMessage()    {}
 func (*FrontgateNodeId) Descriptor() ([]byte, []int) {
-	return fileDescriptor_frontgate_c1e8993c386293d6, []int{1}
+	return fileDescriptor_frontgate_093f87540eca0b29, []int{1}
 }
 func (m *FrontgateNodeId) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_FrontgateNodeId.Unmarshal(m, b)
@@ -129,7 +129,7 @@ func (m *FrontgateIdList) Reset()         { *m = FrontgateIdList{} }
 func (m *FrontgateIdList) String() string { return proto.CompactTextString(m) }
 func (*FrontgateIdList) ProtoMessage()    {}
 func (*FrontgateIdList) Descriptor() ([]byte, []int) {
-	return fileDescriptor_frontgate_c1e8993c386293d6, []int{2}
+	return fileDescriptor_frontgate_093f87540eca0b29, []int{2}
 }
 func (m *FrontgateIdList) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_FrontgateIdList.Unmarshal(m, b)
@@ -177,7 +177,7 @@ func (m *FrontgateConfig) Reset()         { *m = FrontgateConfig{} }
 func (m *FrontgateConfig) String() string { return proto.CompactTextString(m) }
 func (*FrontgateConfig) ProtoMessage()    {}
 func (*FrontgateConfig) Descriptor() ([]byte, []int) {
-	return fileDescriptor_frontgate_c1e8993c386293d6, []int{3}
+	return fileDescriptor_frontgate_093f87540eca0b29, []int{3}
 }
 func (m *FrontgateConfig) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_FrontgateConfig.Unmarshal(m, b)
@@ -288,7 +288,7 @@ func (m *FrontgateEndpoint) Reset()         { *m = FrontgateEndpoint{} }
 func (m *FrontgateEndpoint) String() string { return proto.CompactTextString(m) }
 func (*FrontgateEndpoint) ProtoMessage()    {}
 func (*FrontgateEndpoint) Descriptor() ([]byte, []int) {
-	return fileDescriptor_frontgate_c1e8993c386293d6, []int{4}
+	return fileDescriptor_frontgate_093f87540eca0b29, []int{4}
 }
 func (m *FrontgateEndpoint) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_FrontgateEndpoint.Unmarshal(m, b)
@@ -349,7 +349,7 @@ func (m *RunCommandOnFrontgateRequest) Reset()         { *m = RunCommandOnFrontg
 func (m *RunCommandOnFrontgateRequest) String() string { return proto.CompactTextString(m) }
 func (*RunCommandOnFrontgateRequest) ProtoMessage()    {}
 func (*RunCommandOnFrontgateRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_frontgate_c1e8993c386293d6, []int{5}
+	return fileDescriptor_frontgate_093f87540eca0b29, []int{5}
 }
 func (m *RunCommandOnFrontgateRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_RunCommandOnFrontgateRequest.Unmarshal(m, b)
@@ -400,10 +400,10 @@ func init() {
 }
 
 func init() {
-	proto.RegisterFile("metadata/types/frontgate.proto", fileDescriptor_frontgate_c1e8993c386293d6)
+	proto.RegisterFile("metadata/types/frontgate.proto", fileDescriptor_frontgate_093f87540eca0b29)
 }
 
-var fileDescriptor_frontgate_c1e8993c386293d6 = []byte{
+var fileDescriptor_frontgate_093f87540eca0b29 = []byte{
 	// 529 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x8c, 0x53, 0xcd, 0x6f, 0xd3, 0x4e,
 	0x10, 0x95, 0x93, 0xe6, 0x6b, 0x5c, 0x25, 0xea, 0x5e, 0x7e, 0xfe, 0xa5, 0x7c, 0xb8, 0xb9, 0x10,

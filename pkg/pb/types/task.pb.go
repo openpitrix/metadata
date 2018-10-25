@@ -56,7 +56,7 @@ func (x SubTaskAction) String() string {
 	return proto.EnumName(SubTaskAction_name, int32(x))
 }
 func (SubTaskAction) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_task_2fd763836eca3bb9, []int{0}
+	return fileDescriptor_task_4fd8c3fd5842d0a9, []int{0}
 }
 
 type SubTaskId struct {
@@ -70,7 +70,7 @@ func (m *SubTaskId) Reset()         { *m = SubTaskId{} }
 func (m *SubTaskId) String() string { return proto.CompactTextString(m) }
 func (*SubTaskId) ProtoMessage()    {}
 func (*SubTaskId) Descriptor() ([]byte, []int) {
-	return fileDescriptor_task_2fd763836eca3bb9, []int{0}
+	return fileDescriptor_task_4fd8c3fd5842d0a9, []int{0}
 }
 func (m *SubTaskId) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SubTaskId.Unmarshal(m, b)
@@ -110,7 +110,7 @@ func (m *SubTaskMessage) Reset()         { *m = SubTaskMessage{} }
 func (m *SubTaskMessage) String() string { return proto.CompactTextString(m) }
 func (*SubTaskMessage) ProtoMessage()    {}
 func (*SubTaskMessage) Descriptor() ([]byte, []int) {
-	return fileDescriptor_task_2fd763836eca3bb9, []int{1}
+	return fileDescriptor_task_4fd8c3fd5842d0a9, []int{1}
 }
 func (m *SubTaskMessage) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SubTaskMessage.Unmarshal(m, b)
@@ -163,7 +163,7 @@ func (m *SubTaskStatus) Reset()         { *m = SubTaskStatus{} }
 func (m *SubTaskStatus) String() string { return proto.CompactTextString(m) }
 func (*SubTaskStatus) ProtoMessage()    {}
 func (*SubTaskStatus) Descriptor() ([]byte, []int) {
-	return fileDescriptor_task_2fd763836eca3bb9, []int{2}
+	return fileDescriptor_task_4fd8c3fd5842d0a9, []int{2}
 }
 func (m *SubTaskStatus) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SubTaskStatus.Unmarshal(m, b)
@@ -218,7 +218,7 @@ func (m *SubTask_StartConfd) Reset()         { *m = SubTask_StartConfd{} }
 func (m *SubTask_StartConfd) String() string { return proto.CompactTextString(m) }
 func (*SubTask_StartConfd) ProtoMessage()    {}
 func (*SubTask_StartConfd) Descriptor() ([]byte, []int) {
-	return fileDescriptor_task_2fd763836eca3bb9, []int{3}
+	return fileDescriptor_task_4fd8c3fd5842d0a9, []int{3}
 }
 func (m *SubTask_StartConfd) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SubTask_StartConfd.Unmarshal(m, b)
@@ -294,7 +294,7 @@ func (m *SubTask_StopConfd) Reset()         { *m = SubTask_StopConfd{} }
 func (m *SubTask_StopConfd) String() string { return proto.CompactTextString(m) }
 func (*SubTask_StopConfd) ProtoMessage()    {}
 func (*SubTask_StopConfd) Descriptor() ([]byte, []int) {
-	return fileDescriptor_task_2fd763836eca3bb9, []int{4}
+	return fileDescriptor_task_4fd8c3fd5842d0a9, []int{4}
 }
 func (m *SubTask_StopConfd) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SubTask_StopConfd.Unmarshal(m, b)
@@ -371,7 +371,7 @@ func (m *SubTask_RegisterMetadata) Reset()         { *m = SubTask_RegisterMetada
 func (m *SubTask_RegisterMetadata) String() string { return proto.CompactTextString(m) }
 func (*SubTask_RegisterMetadata) ProtoMessage()    {}
 func (*SubTask_RegisterMetadata) Descriptor() ([]byte, []int) {
-	return fileDescriptor_task_2fd763836eca3bb9, []int{5}
+	return fileDescriptor_task_4fd8c3fd5842d0a9, []int{5}
 }
 func (m *SubTask_RegisterMetadata) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SubTask_RegisterMetadata.Unmarshal(m, b)
@@ -456,7 +456,7 @@ func (m *SubTask_DeregisterMetadata) Reset()         { *m = SubTask_DeregisterMe
 func (m *SubTask_DeregisterMetadata) String() string { return proto.CompactTextString(m) }
 func (*SubTask_DeregisterMetadata) ProtoMessage()    {}
 func (*SubTask_DeregisterMetadata) Descriptor() ([]byte, []int) {
-	return fileDescriptor_task_2fd763836eca3bb9, []int{6}
+	return fileDescriptor_task_4fd8c3fd5842d0a9, []int{6}
 }
 func (m *SubTask_DeregisterMetadata) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SubTask_DeregisterMetadata.Unmarshal(m, b)
@@ -548,7 +548,7 @@ func (m *SubTask_RegisterCmd) Reset()         { *m = SubTask_RegisterCmd{} }
 func (m *SubTask_RegisterCmd) String() string { return proto.CompactTextString(m) }
 func (*SubTask_RegisterCmd) ProtoMessage()    {}
 func (*SubTask_RegisterCmd) Descriptor() ([]byte, []int) {
-	return fileDescriptor_task_2fd763836eca3bb9, []int{7}
+	return fileDescriptor_task_4fd8c3fd5842d0a9, []int{7}
 }
 func (m *SubTask_RegisterCmd) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SubTask_RegisterCmd.Unmarshal(m, b)
@@ -640,7 +640,7 @@ func (m *SubTask_DeregisterCmd) Reset()         { *m = SubTask_DeregisterCmd{} }
 func (m *SubTask_DeregisterCmd) String() string { return proto.CompactTextString(m) }
 func (*SubTask_DeregisterCmd) ProtoMessage()    {}
 func (*SubTask_DeregisterCmd) Descriptor() ([]byte, []int) {
-	return fileDescriptor_task_2fd763836eca3bb9, []int{8}
+	return fileDescriptor_task_4fd8c3fd5842d0a9, []int{8}
 }
 func (m *SubTask_DeregisterCmd) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SubTask_DeregisterCmd.Unmarshal(m, b)
@@ -726,7 +726,7 @@ func (m *SubTask_GetTaskStatus) Reset()         { *m = SubTask_GetTaskStatus{} }
 func (m *SubTask_GetTaskStatus) String() string { return proto.CompactTextString(m) }
 func (*SubTask_GetTaskStatus) ProtoMessage()    {}
 func (*SubTask_GetTaskStatus) Descriptor() ([]byte, []int) {
-	return fileDescriptor_task_2fd763836eca3bb9, []int{9}
+	return fileDescriptor_task_4fd8c3fd5842d0a9, []int{9}
 }
 func (m *SubTask_GetTaskStatus) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SubTask_GetTaskStatus.Unmarshal(m, b)
@@ -774,9 +774,9 @@ func init() {
 	proto.RegisterEnum("metadata.types.SubTaskAction", SubTaskAction_name, SubTaskAction_value)
 }
 
-func init() { proto.RegisterFile("metadata/types/task.proto", fileDescriptor_task_2fd763836eca3bb9) }
+func init() { proto.RegisterFile("metadata/types/task.proto", fileDescriptor_task_4fd8c3fd5842d0a9) }
 
-var fileDescriptor_task_2fd763836eca3bb9 = []byte{
+var fileDescriptor_task_4fd8c3fd5842d0a9 = []byte{
 	// 465 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xd4, 0x95, 0xcf, 0x6e, 0x13, 0x31,
 	0x10, 0xc6, 0x71, 0x9b, 0xdd, 0x6d, 0xa6, 0x24, 0xb8, 0xa6, 0x84, 0x2d, 0xe2, 0x50, 0x56, 0x1c,

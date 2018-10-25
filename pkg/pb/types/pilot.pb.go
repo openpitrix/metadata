@@ -33,7 +33,7 @@ func (m *PilotConfig) Reset()         { *m = PilotConfig{} }
 func (m *PilotConfig) String() string { return proto.CompactTextString(m) }
 func (*PilotConfig) ProtoMessage()    {}
 func (*PilotConfig) Descriptor() ([]byte, []int) {
-	return fileDescriptor_pilot_ee451953cee123ed, []int{0}
+	return fileDescriptor_pilot_9a94ee75001d4ed4, []int{0}
 }
 func (m *PilotConfig) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_PilotConfig.Unmarshal(m, b)
@@ -104,7 +104,7 @@ func (m *PilotTLSConfig) Reset()         { *m = PilotTLSConfig{} }
 func (m *PilotTLSConfig) String() string { return proto.CompactTextString(m) }
 func (*PilotTLSConfig) ProtoMessage()    {}
 func (*PilotTLSConfig) Descriptor() ([]byte, []int) {
-	return fileDescriptor_pilot_ee451953cee123ed, []int{1}
+	return fileDescriptor_pilot_9a94ee75001d4ed4, []int{1}
 }
 func (m *PilotTLSConfig) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_PilotTLSConfig.Unmarshal(m, b)
@@ -180,7 +180,7 @@ func (m *PilotClientTLSConfig) Reset()         { *m = PilotClientTLSConfig{} }
 func (m *PilotClientTLSConfig) String() string { return proto.CompactTextString(m) }
 func (*PilotClientTLSConfig) ProtoMessage()    {}
 func (*PilotClientTLSConfig) Descriptor() ([]byte, []int) {
-	return fileDescriptor_pilot_ee451953cee123ed, []int{2}
+	return fileDescriptor_pilot_9a94ee75001d4ed4, []int{2}
 }
 func (m *PilotClientTLSConfig) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_PilotClientTLSConfig.Unmarshal(m, b)
@@ -241,7 +241,7 @@ func (m *PilotEndpoint) Reset()         { *m = PilotEndpoint{} }
 func (m *PilotEndpoint) String() string { return proto.CompactTextString(m) }
 func (*PilotEndpoint) ProtoMessage()    {}
 func (*PilotEndpoint) Descriptor() ([]byte, []int) {
-	return fileDescriptor_pilot_ee451953cee123ed, []int{3}
+	return fileDescriptor_pilot_9a94ee75001d4ed4, []int{3}
 }
 func (m *PilotEndpoint) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_PilotEndpoint.Unmarshal(m, b)
@@ -289,9 +289,9 @@ func init() {
 	proto.RegisterType((*PilotEndpoint)(nil), "metadata.types.PilotEndpoint")
 }
 
-func init() { proto.RegisterFile("metadata/types/pilot.proto", fileDescriptor_pilot_ee451953cee123ed) }
+func init() { proto.RegisterFile("metadata/types/pilot.proto", fileDescriptor_pilot_9a94ee75001d4ed4) }
 
-var fileDescriptor_pilot_ee451953cee123ed = []byte{
+var fileDescriptor_pilot_9a94ee75001d4ed4 = []byte{
 	// 389 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x94, 0x52, 0xc1, 0xae, 0xd2, 0x40,
 	0x14, 0x4d, 0x4b, 0x41, 0x7a, 0x09, 0x10, 0x27, 0x2e, 0xaa, 0x46, 0x25, 0x2c, 0x0c, 0xd1, 0x48,

@@ -30,7 +30,7 @@ func (m *DroneId) Reset()         { *m = DroneId{} }
 func (m *DroneId) String() string { return proto.CompactTextString(m) }
 func (*DroneId) ProtoMessage()    {}
 func (*DroneId) Descriptor() ([]byte, []int) {
-	return fileDescriptor_drone_7f1d8234a1c47e2e, []int{0}
+	return fileDescriptor_drone_617a248377af6286, []int{0}
 }
 func (m *DroneId) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DroneId.Unmarshal(m, b)
@@ -68,7 +68,7 @@ func (m *DroneIdList) Reset()         { *m = DroneIdList{} }
 func (m *DroneIdList) String() string { return proto.CompactTextString(m) }
 func (*DroneIdList) ProtoMessage()    {}
 func (*DroneIdList) Descriptor() ([]byte, []int) {
-	return fileDescriptor_drone_7f1d8234a1c47e2e, []int{1}
+	return fileDescriptor_drone_617a248377af6286, []int{1}
 }
 func (m *DroneIdList) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DroneIdList.Unmarshal(m, b)
@@ -111,7 +111,7 @@ func (m *DroneConfig) Reset()         { *m = DroneConfig{} }
 func (m *DroneConfig) String() string { return proto.CompactTextString(m) }
 func (*DroneConfig) ProtoMessage()    {}
 func (*DroneConfig) Descriptor() ([]byte, []int) {
-	return fileDescriptor_drone_7f1d8234a1c47e2e, []int{2}
+	return fileDescriptor_drone_617a248377af6286, []int{2}
 }
 func (m *DroneConfig) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DroneConfig.Unmarshal(m, b)
@@ -186,7 +186,7 @@ func (m *DroneEndpoint) Reset()         { *m = DroneEndpoint{} }
 func (m *DroneEndpoint) String() string { return proto.CompactTextString(m) }
 func (*DroneEndpoint) ProtoMessage()    {}
 func (*DroneEndpoint) Descriptor() ([]byte, []int) {
-	return fileDescriptor_drone_7f1d8234a1c47e2e, []int{3}
+	return fileDescriptor_drone_617a248377af6286, []int{3}
 }
 func (m *DroneEndpoint) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DroneEndpoint.Unmarshal(m, b)
@@ -239,7 +239,7 @@ func (m *SetDroneConfigRequest) Reset()         { *m = SetDroneConfigRequest{} }
 func (m *SetDroneConfigRequest) String() string { return proto.CompactTextString(m) }
 func (*SetDroneConfigRequest) ProtoMessage()    {}
 func (*SetDroneConfigRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_drone_7f1d8234a1c47e2e, []int{4}
+	return fileDescriptor_drone_617a248377af6286, []int{4}
 }
 func (m *SetDroneConfigRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SetDroneConfigRequest.Unmarshal(m, b)
@@ -286,7 +286,7 @@ func (m *RunCommandOnDroneRequest) Reset()         { *m = RunCommandOnDroneReque
 func (m *RunCommandOnDroneRequest) String() string { return proto.CompactTextString(m) }
 func (*RunCommandOnDroneRequest) ProtoMessage()    {}
 func (*RunCommandOnDroneRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_drone_7f1d8234a1c47e2e, []int{5}
+	return fileDescriptor_drone_617a248377af6286, []int{5}
 }
 func (m *RunCommandOnDroneRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_RunCommandOnDroneRequest.Unmarshal(m, b)
@@ -339,7 +339,7 @@ func (m *DroneBinary) Reset()         { *m = DroneBinary{} }
 func (m *DroneBinary) String() string { return proto.CompactTextString(m) }
 func (*DroneBinary) ProtoMessage()    {}
 func (*DroneBinary) Descriptor() ([]byte, []int) {
-	return fileDescriptor_drone_7f1d8234a1c47e2e, []int{6}
+	return fileDescriptor_drone_617a248377af6286, []int{6}
 }
 func (m *DroneBinary) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DroneBinary.Unmarshal(m, b)
@@ -383,9 +383,9 @@ func init() {
 	proto.RegisterType((*DroneBinary)(nil), "metadata.types.DroneBinary")
 }
 
-func init() { proto.RegisterFile("metadata/types/drone.proto", fileDescriptor_drone_7f1d8234a1c47e2e) }
+func init() { proto.RegisterFile("metadata/types/drone.proto", fileDescriptor_drone_617a248377af6286) }
 
-var fileDescriptor_drone_7f1d8234a1c47e2e = []byte{
+var fileDescriptor_drone_617a248377af6286 = []byte{
 	// 524 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x53, 0x5d, 0x6f, 0xd3, 0x30,
 	0x14, 0x55, 0xba, 0xf5, 0xeb, 0x96, 0x75, 0xc2, 0x12, 0x22, 0xeb, 0x18, 0x94, 0x3c, 0x8c, 0x22,

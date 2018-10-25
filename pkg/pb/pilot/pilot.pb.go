@@ -1249,9 +1249,9 @@ var _PilotServiceForFrontgate_serviceDesc = grpc.ServiceDesc{
 	Metadata: "metadata/pilot/pilot.proto",
 }
 
-func init() { proto.RegisterFile("metadata/pilot/pilot.proto", fileDescriptor_pilot_adb936d3e80124fb) }
+func init() { proto.RegisterFile("metadata/pilot/pilot.proto", fileDescriptor_pilot_e668c38dcf8f9c50) }
 
-var fileDescriptor_pilot_adb936d3e80124fb = []byte{
+var fileDescriptor_pilot_e668c38dcf8f9c50 = []byte{
 	// 675 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xdc, 0x96, 0xdf, 0x4e, 0xd4, 0x40,
 	0x14, 0xc6, 0x43, 0x62, 0x4c, 0x38, 0xca, 0xba, 0x0c, 0x2a, 0xb2, 0x04, 0xbc, 0x50, 0x12, 0xe2,

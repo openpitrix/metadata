@@ -122,7 +122,7 @@ func (x TaskStatus) String() string {
 	return proto.EnumName(TaskStatus_name, int32(x))
 }
 func (TaskStatus) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_task_status_a5ff8aba022cd1cf, []int{0}
+	return fileDescriptor_task_status_8b3cfc9451cf347d, []int{0}
 }
 
 func init() {
@@ -130,10 +130,10 @@ func init() {
 }
 
 func init() {
-	proto.RegisterFile("metadata/types/task_status.proto", fileDescriptor_task_status_a5ff8aba022cd1cf)
+	proto.RegisterFile("metadata/types/task_status.proto", fileDescriptor_task_status_8b3cfc9451cf347d)
 }
 
-var fileDescriptor_task_status_a5ff8aba022cd1cf = []byte{
+var fileDescriptor_task_status_8b3cfc9451cf347d = []byte{
 	// 351 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x3c, 0x91, 0xc9, 0xf2, 0xd3, 0x30,
 	0x0c, 0xc6, 0x81, 0xd2, 0xcd, 0xdd, 0x8c, 0xd9, 0xb7, 0x19, 0xce, 0x30, 0x34, 0x07, 0x8e, 0xdc,

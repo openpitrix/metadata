@@ -723,9 +723,9 @@ var _DroneService_serviceDesc = grpc.ServiceDesc{
 	Metadata: "metadata/drone/drone.proto",
 }
 
-func init() { proto.RegisterFile("metadata/drone/drone.proto", fileDescriptor_drone_62968676582979e7) }
+func init() { proto.RegisterFile("metadata/drone/drone.proto", fileDescriptor_drone_14e9256fcc00abf3) }
 
-var fileDescriptor_drone_62968676582979e7 = []byte{
+var fileDescriptor_drone_14e9256fcc00abf3 = []byte{
 	// 473 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xa4, 0x94, 0x4f, 0x6f, 0xd3, 0x40,
 	0x10, 0xc5, 0x6f, 0x48, 0x19, 0x20, 0x45, 0x5b, 0xfe, 0x08, 0x23, 0x40, 0xdc, 0x90, 0x10, 0x89,

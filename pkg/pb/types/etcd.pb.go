@@ -33,7 +33,7 @@ func (m *EtcdConfig) Reset()         { *m = EtcdConfig{} }
 func (m *EtcdConfig) String() string { return proto.CompactTextString(m) }
 func (*EtcdConfig) ProtoMessage()    {}
 func (*EtcdConfig) Descriptor() ([]byte, []int) {
-	return fileDescriptor_etcd_aa40df09ebb48aae, []int{0}
+	return fileDescriptor_etcd_dae8fb188500e93c, []int{0}
 }
 func (m *EtcdConfig) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_EtcdConfig.Unmarshal(m, b)
@@ -100,7 +100,7 @@ func (m *EtcdEndpoint) Reset()         { *m = EtcdEndpoint{} }
 func (m *EtcdEndpoint) String() string { return proto.CompactTextString(m) }
 func (*EtcdEndpoint) ProtoMessage()    {}
 func (*EtcdEndpoint) Descriptor() ([]byte, []int) {
-	return fileDescriptor_etcd_aa40df09ebb48aae, []int{1}
+	return fileDescriptor_etcd_dae8fb188500e93c, []int{1}
 }
 func (m *EtcdEndpoint) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_EtcdEndpoint.Unmarshal(m, b)
@@ -139,9 +139,9 @@ func init() {
 	proto.RegisterType((*EtcdEndpoint)(nil), "metadata.types.EtcdEndpoint")
 }
 
-func init() { proto.RegisterFile("metadata/types/etcd.proto", fileDescriptor_etcd_aa40df09ebb48aae) }
+func init() { proto.RegisterFile("metadata/types/etcd.proto", fileDescriptor_etcd_dae8fb188500e93c) }
 
-var fileDescriptor_etcd_aa40df09ebb48aae = []byte{
+var fileDescriptor_etcd_dae8fb188500e93c = []byte{
 	// 264 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x54, 0x90, 0x41, 0x4b, 0xc3, 0x40,
 	0x10, 0x85, 0x89, 0x6d, 0xa5, 0xd9, 0x4a, 0x85, 0x3d, 0x45, 0x11, 0x09, 0xbd, 0x18, 0x10, 0x13,

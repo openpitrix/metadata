@@ -46,7 +46,7 @@ func (m *Config) Reset()         { *m = Config{} }
 func (m *Config) String() string { return proto.CompactTextString(m) }
 func (*Config) ProtoMessage()    {}
 func (*Config) Descriptor() ([]byte, []int) {
-	return fileDescriptor_frontgate_8084aa2b975699c9, []int{0}
+	return fileDescriptor_frontgate_86500ba73049de24, []int{0}
 }
 func (m *Config) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Config.Unmarshal(m, b)
@@ -1426,10 +1426,10 @@ func dialFrontgateServicePath(network, address, path string, conn net.Conn) (*Fr
 }
 
 func init() {
-	proto.RegisterFile("metadata/frontgate/frontgate.proto", fileDescriptor_frontgate_8084aa2b975699c9)
+	proto.RegisterFile("metadata/frontgate/frontgate.proto", fileDescriptor_frontgate_86500ba73049de24)
 }
 
-var fileDescriptor_frontgate_8084aa2b975699c9 = []byte{
+var fileDescriptor_frontgate_86500ba73049de24 = []byte{
 	// 806 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x96, 0x61, 0x4f, 0x1a, 0x49,
 	0x18, 0xc7, 0x03, 0x77, 0x7a, 0xc7, 0x83, 0x70, 0x3a, 0x9e, 0x8a, 0x7b, 0xf1, 0xf4, 0xbc, 0x98,
