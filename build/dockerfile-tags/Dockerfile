@@ -5,12 +5,12 @@
 FROM golang:1.11 as builder
 
 WORKDIR /build-dir
-COPY ./.git ./.git
+COPY ../../.git ./.git
 
 ENV GO111MODULE=on
 ENV CGO_ENABLED=0
 ENV GOOS=linux
-ENV GOBIN=/build-dir/bin
+ENV GOBIN=/build-dir
 
 RUN echo module drone > /build-dir/go.mod
 RUN git describe --tags --always > /build-dir/version
