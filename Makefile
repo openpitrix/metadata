@@ -2,6 +2,16 @@
 # Use of this source code is governed by a Apache license
 # that can be found in the LICENSE file.
 
+default:
+
+dev:
+	git describe --tags --always > ./_version
+	git describe --exact-match || echo latest > ./_version
+
+docker:
+	docker build -t openpitrix/metadata-dev -f ./Dockerfile .
+	docker images openpitrix/metadata-dev
+
 generate:
 	cd api && make
 
