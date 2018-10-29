@@ -20,8 +20,8 @@ RUN go get -ldflags '-w -s' -tags netgo openpitrix.io/metadata/cmd/frontgate@$(c
 
 FROM alpine:3.7
 
-COPY --from=builder /metadata_bin/drone     /usr/local/bin/
-COPY --from=builder /metadata_bin/frontgate /usr/local/bin/
+COPY --from=builder /build-dir/drone     /usr/local/bin/
+COPY --from=builder /build-dir/frontgate /usr/local/bin/
 
 CMD ["sh"]
 
