@@ -276,7 +276,7 @@ EXAMPLE:
 				}
 
 				var maxLen = 1
-				for k, _ := range reply.GetValueMap() {
+				for k := range reply.GetValueMap() {
 					if len(k) > maxLen {
 						maxLen = len(k)
 					}
