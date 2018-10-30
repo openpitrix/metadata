@@ -2,5 +2,5 @@
 // Use of this source code is governed by a Apache license
 // that can be found in the LICENSE file.
 
-// Metadata sevice for OpenPitrix.
+// Metadata service for OpenPitrix.
 package metadata

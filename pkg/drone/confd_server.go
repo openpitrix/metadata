@@ -161,14 +161,14 @@ func (p *ConfdServer) Stop() error {
 	logger.Infof(nil, "ConfdServer: Stop")
 
 	p.mu.Lock()
-	var processer = p.processor
+	var processor = p.processor
 	p.processor = nil
 	p.client = nil
 	p.running = false
 	p.mu.Unlock()
 
-	if processer != nil {
-		if err := processer.Close(); err != nil {
+	if processor != nil {
+		if err := processor.Close(); err != nil {
 			logger.Warnf(nil, "%+v", err)
 			return err
 		}
