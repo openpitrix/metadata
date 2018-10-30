@@ -6,10 +6,10 @@
 # builder
 # -----------------------------------------------------------------------------
 
-FROM golang:1.11 as builder
+FROM golang:1.11-alpine3.7 as builder
 
-# compress app
-RUN apk add --no-cache upx
+# intall tools
+RUN apk add --no-cache git upx
 
 # install /usr/bin/nsenter
 RUN apk add --no-cache util-linux
