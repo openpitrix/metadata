@@ -152,6 +152,10 @@ func (p *FrameChannel) Read(data []byte) (n int, err error) {
 	}
 
 	n, err = r.Read(data)
+	if err != nil {
+		return n, err
+	}
+
 	return n, nil
 }
 

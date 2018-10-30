@@ -83,13 +83,6 @@ func parseVersionInfo(v version.Version) (modPath, modVersion string) {
 	return
 }
 
-/*
-
-	AppPath        string // /path/to/exe
-	AppModPath     string // app go import path
-	AppVersion     string // app version, e.g. v0.1.0
-*/
-
 func getAppPath() (string, error) {
 	prog := os.Args[0]
 	p, err := filepath.Abs(prog)
@@ -105,8 +98,8 @@ func getAppPath() (string, error) {
 	}
 	if filepath.Ext(p) == "" {
 		p += ".exe"
-		fi, err := os.Stat(p)
-		if err == nil {
+		fi, errx := os.Stat(p)
+		if errx == nil {
 			if !fi.Mode().IsDir() {
 				return p, nil
 			}
