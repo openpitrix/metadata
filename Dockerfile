@@ -9,7 +9,7 @@
 FROM golang:1.11-alpine3.7 as builder
 
 # intall tools
-RUN apk add --no-cache git upx
+RUN apk add --no-cache git
 
 # install /usr/bin/nsenter
 RUN apk add --no-cache util-linux
@@ -26,10 +26,8 @@ RUN echo module drone > /build-dir/go.mod
 RUN git describe --tags --always > /build-dir/version
 RUN git describe --exact-match 2>/dev/null || git log -1 --format="%H" > /build-dir/version
 
-RUN go get -tags netgo openpitrix.io/metadata/cmd/drone@$(cat /build-dir/version)
-RUN go get -tags netgo openpitrix.io/metadata/cmd/frontgate@$(cat /build-dir/version)
-
-#RUN find /build-dir -type f -exec upx {} \;
+RUN go get -ldflags '-w -s' -tags netgo openpitrix.io/metadata/cmd/drone@$(cat /build-dir/version)
+RUN go get -ldflags '-w -s' -tags netgo openpitrix.io/metadata/cmd/frontgate@$(cat /build-dir/version)
 
 RUN echo version: $(cat /build-dir/version)
 
