@@ -11,6 +11,8 @@ import (
 	"strings"
 
 	"rsc.io/goversion/version"
+
+	"openpitrix.io/logger"
 )
 
 type Version struct {
@@ -25,27 +27,25 @@ type Version struct {
 }
 
 func GetVersion() *Version {
-	if pkgVersion != nil {
-		var q = *pkgVersion
-		return &q
-	}
-	return nil
+	var q = *pkgVersion
+	return &q
 }
 
 func GetVersionString() string {
-	if pkgVersion != nil {
-		return pkgVersion.AppModVersion
-	}
-	return "unknown"
+	return pkgVersion.AppModVersion
 }
 
 var pkgVersion = func() *Version {
 	apppath, err := getAppPath()
-	println("pkg/version/apppath:", apppath)
 	if err != nil {
-		return nil
+		logger.Criticalf(nil, "getAppPath failed: %v", err)
+		os.Exit(1)
 	}
-	v, _ := ReadVersion(apppath)
+	v, err := ReadVersion(apppath)
+	if err != nil {
+		logger.Criticalf(nil, "ReadVersion failed: %v", err)
+		os.Exit(1)
+	}
 	return v
 }()
 
