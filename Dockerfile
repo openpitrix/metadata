@@ -29,7 +29,7 @@ RUN git describe --exact-match 2>/dev/null || git log -1 --format="%H" > /build-
 RUN go get -tags netgo openpitrix.io/metadata/cmd/drone@$(cat /build-dir/version)
 RUN go get -tags netgo openpitrix.io/metadata/cmd/frontgate@$(cat /build-dir/version)
 
-RUN find /build-dir -type f -exec upx {} \;
+#RUN find /build-dir -type f -exec upx {} \;
 
 RUN echo version: $(cat /build-dir/version)
 
