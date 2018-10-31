@@ -2,12 +2,12 @@
 // Use of this source code is governed by a Apache license
 // that can be found in the LICENSE file.
 
+// +build go1.8
+
 package version
 
 import (
-	"fmt"
 	"os"
-	"path/filepath"
 	"strings"
 
 	"rsc.io/goversion/version"
@@ -36,7 +36,7 @@ func GetVersionString() string {
 }
 
 var pkgVersion = func() *Version {
-	apppath, err := getAppPath()
+	apppath, err := os.Executable()
 	if err != nil {
 		logger.Criticalf(nil, "getAppPath failed: %v", err)
 		os.Exit(1)
@@ -82,30 +82,4 @@ func parseVersionInfo(v version.Version) (modPath, modVersion string) {
 		}
 	}
 	return
-}
-
-func getAppPath() (string, error) {
-	prog := os.Args[0]
-	p, err := filepath.Abs(prog)
-	if err != nil {
-		return "", err
-	}
-	fi, err := os.Stat(p)
-	if err == nil {
-		if !fi.Mode().IsDir() {
-			return p, nil
-		}
-		err = fmt.Errorf("winsvc.GetAppPath: %s is directory", p)
-	}
-	if filepath.Ext(p) == "" {
-		p += ".exe"
-		fi, errx := os.Stat(p)
-		if errx == nil {
-			if !fi.Mode().IsDir() {
-				return p, nil
-			}
-			err = fmt.Errorf("winsvc.GetAppPath: %s is directory", p)
-		}
-	}
-	return "", err
 }
