@@ -43,7 +43,7 @@ var pkgVersion = func() *Version {
 	}
 	v, err := ReadVersion(apppath)
 	if err != nil {
-		logger.Criticalf(nil, "ReadVersion failed: %v", err)
+		logger.Criticalf(nil, "ReadVersion failed: apppath = %s, err = %v", apppath, err)
 		os.Exit(1)
 	}
 	return v
