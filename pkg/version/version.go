@@ -36,7 +36,7 @@ func GetVersionString() string {
 	if pkgVersion != nil {
 		return pkgVersion.AppModVersion
 	}
-	return ""
+	return "unknown"
 }
 
 var pkgVersion = func() *Version {

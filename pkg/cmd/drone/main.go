@@ -65,6 +65,7 @@ EXAMPLE:
 			Hidden: true,
 
 			Action: func(c *cli.Context) {
+				fmt.Println(version.GetVersion())
 				return
 			},
 		},
