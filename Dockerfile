@@ -24,7 +24,7 @@ ENV GOBIN=/build-dir
 
 RUN echo module drone > /build-dir/go.mod
 RUN git describe --tags --always > /build-dir/version
-RUN git describe --exact-match 2>/dev/null || echo latest > /build-dir/version
+RUN git describe --exact-match 2>/dev/null || echo master > /build-dir/version
 
 RUN go get -ldflags '-w -s' -tags netgo openpitrix.io/metadata/cmd/drone@$(cat /build-dir/version)
 RUN go get -ldflags '-w -s' -tags netgo openpitrix.io/metadata/cmd/frontgate@$(cat /build-dir/version)

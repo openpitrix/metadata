@@ -41,6 +41,7 @@ func GetVersionString() string {
 
 var pkgVersion = func() *Version {
 	apppath, err := getAppPath()
+	println("pkg/version/apppath:", apppath)
 	if err != nil {
 		return nil
 	}
